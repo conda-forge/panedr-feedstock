@@ -20,9 +20,11 @@ requirements:
     - python
     - setuptools
     - pip
+    - pbr
   run:
     - python
     - pandas
+    - pbr
 
 test:
   imports:
