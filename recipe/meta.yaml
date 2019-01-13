@@ -1,6 +1,6 @@
 {% set name = "panedr" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "cc7ecd518cc0ba2e0d458bd58a19388dc73ff994610a4005717cf1f92307da44" %}
+{% set version = "0.5.2" %}
+{% set sha256 = "45eb926a1176789998f041be4d2bea2ed5b70c6540cbaf8903d82473cfd886b2" %}
 
 package:
   name: {{ name|lower }}
