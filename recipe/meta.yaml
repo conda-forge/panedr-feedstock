@@ -1,6 +1,6 @@
 {% set name = "panedr" %}
-{% set version = "0.5.2" %}
-{% set sha256 = "45eb926a1176789998f041be4d2bea2ed5b70c6540cbaf8903d82473cfd886b2" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "64c74863f72d51729ac5cb1e2dbb18747f7137588990c308ef8ca120fbf2ddd4" %}
 
 package:
   name: {{ name|lower }}
@@ -14,9 +14,9 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - pip
@@ -33,12 +33,12 @@ test:
 about:
   home: http://github.com/jbarnoud/panedr
   license: LGPL-2.1
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
-  summary: 'GROMACS edr files to pandas dataframe'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
+  summary: GROMACS edr files to pandas dataframe
   description: |
-      Panedr reads a Gromacs EDR file and returns its content as a pandas dataframe. The library 
-      exposes one function—the edr_to_df function—that gets the path to an EDR file and returns a
-      pandas dataframe.
+    Panedr reads a Gromacs EDR file and returns its content as a pandas dataframe. The library 
+    exposes one function—the edr_to_df function—that gets the path to an EDR file and returns a
+    pandas dataframe.
   doc_url: http://github.com/jbarnoud/panedr
   dev_url: http://github.com/jbarnoud/panedr
 
