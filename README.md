@@ -3,7 +3,7 @@ About panedr
 
 Home: http://github.com/jbarnoud/panedr
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/panedr-feedstock/blob/main/LICENSE.txt)
 
