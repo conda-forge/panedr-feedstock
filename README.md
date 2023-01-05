@@ -1,15 +1,17 @@
 About panedr
 ============
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
-
 Home: http://github.com/jbarnoud/panedr
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/panedr-feedstock/blob/main/LICENSE.txt)
 
 Summary: GROMACS edr files to pandas dataframe
+
+Development: http://github.com/jbarnoud/panedr
+
+Documentation: http://github.com/jbarnoud/panedr
 
 Panedr reads a Gromacs EDR file and returns its content as a pandas dataframe. The library
 exposes one function—the edr_to_df function—that gets the path to an EDR file and returns a
@@ -19,8 +21,15 @@ pandas dataframe.
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/panedr-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/panedr-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5664&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/panedr-feedstock?branchName=main">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -36,23 +45,52 @@ Installing `panedr` from the `conda-forge` channel can be achieved by adding `co
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `panedr` can be installed with:
+Once the `conda-forge` channel has been enabled, `panedr` can be installed with `conda`:
 
 ```
 conda install panedr
 ```
 
-It is possible to list all of the versions of `panedr` available on your platform with:
+or with `mamba`:
+
+```
+mamba install panedr
+```
+
+It is possible to list all of the versions of `panedr` available on your platform with `conda`:
 
 ```
 conda search panedr --channel conda-forge
 ```
 
+or with `mamba`:
+
+```
+mamba search panedr --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search panedr --channel conda-forge
+
+# List packages depending on `panedr`:
+mamba repoquery whoneeds panedr --channel conda-forge
+
+# List dependencies of `panedr`:
+mamba repoquery depends panedr --channel conda-forge
+```
+
 
 About conda-forge
 =================
+
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -62,10 +100,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
@@ -104,14 +144,17 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
 =====================
 
+* [@ialibay](https://github.com/ialibay/)
 * [@jbarnoud](https://github.com/jbarnoud/)
 * [@kain88-de](https://github.com/kain88-de/)
+* [@orbeckst](https://github.com/orbeckst/)
+* [@richardjgowers](https://github.com/richardjgowers/)
 
