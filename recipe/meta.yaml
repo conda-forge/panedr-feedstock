@@ -14,25 +14,31 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . -vv
+
 requirements:
   host:
-    - python
+    - python >= 3.6
     - setuptools
     - pip
     - pbr
   run:
-    - python
+    - python >= 3.6
     - pandas
     - pbr
+    - pyedr =={{ version }}
 
 test:
   imports:
     - panedr
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/jbarnoud/panedr
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
   summary: GROMACS edr files to pandas dataframe
   description: |
