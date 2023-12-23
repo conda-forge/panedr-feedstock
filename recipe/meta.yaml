@@ -18,14 +18,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.9
     - setuptools
     - pip
-    - pbr
+    - versioningit
   run:
-    - python >=3.6
+    - python >=3.9
     - pandas
-    - pbr
     - pyedr =={{ version }}
 
 test:
@@ -37,7 +36,7 @@ test:
     - pip
 
 about:
-  home: http://github.com/jbarnoud/panedr
+  home: http://github.com/MDAnalysis/panedr
   license: LGPL-2.1-or-later
   license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
   summary: GROMACS edr files to pandas dataframe
@@ -45,8 +44,8 @@ about:
     Panedr reads a Gromacs EDR file and returns its content as a pandas dataframe. The library 
     exposes one function—the edr_to_df function—that gets the path to an EDR file and returns a
     pandas dataframe.
-  doc_url: http://github.com/jbarnoud/panedr
-  dev_url: http://github.com/jbarnoud/panedr
+  doc_url: http://github.com/MDAnalysis/panedr
+  dev_url: http://github.com/MDAnalysis/panedr
 
 extra:
   recipe-maintainers:
