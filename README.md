@@ -3,15 +3,15 @@ About panedr-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/panedr-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/jbarnoud/panedr
+Home: http://github.com/MDAnalysis/panedr
 
 Package license: LGPL-2.1-or-later
 
 Summary: GROMACS edr files to pandas dataframe
 
-Development: http://github.com/jbarnoud/panedr
+Development: http://github.com/MDAnalysis/panedr
 
-Documentation: http://github.com/jbarnoud/panedr
+Documentation: http://github.com/MDAnalysis/panedr
 
 Panedr reads a Gromacs EDR file and returns its content as a pandas dataframe. The library
 exposes one function—the edr_to_df function—that gets the path to an EDR file and returns a
